@@ -96,6 +96,9 @@ void CanvasArea::mouseMoveEvent(QMouseEvent *event)
         case RECT:
             drawRect(event->pos());
             break;
+        case CIRCLE:
+            drawCircle(event->pos());
+            break;
         default:
             break;
         }
@@ -119,6 +122,9 @@ void CanvasArea::mouseReleaseEvent(QMouseEvent *event)
             break;
         case RECT:
             drawRect(event->pos());
+            break;
+        case CIRCLE:
+            drawCircle(event->pos());
             break;
         default:
             break;
@@ -177,6 +183,18 @@ void CanvasArea::drawRect(const QPoint &endPoint)
     painter.drawRect(rect);
     modified = true;
     update(QRect(lastPoint, endPoint).normalized().adjusted(-rect.width() / 2, -rect.height()/2, rect.width()/2, rect.height()/2));
+}
+
+void CanvasArea::drawCircle(const QPoint &endPoint)
+{
+    image = previousImage;
+    QRect rect = QRect(lastPoint, endPoint).normalized();
+    QPainter painter(&image);
+    painter.setPen(QPen(myPenColor, myPenWidth, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+    painter.drawEllipse(rect);
+    modified = true;
+    update(QRect(lastPoint, endPoint).normalized().adjusted(-rect.width() / 2, -rect.height()/2, rect.width()/2, rect.height()/2));
+
 }
 
 void CanvasArea::erase(const QPoint &endPoint)

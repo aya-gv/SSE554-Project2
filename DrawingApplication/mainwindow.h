@@ -30,6 +30,7 @@ private slots:
     void on_EraseButton_clicked();
     void on_LineButton_clicked();
     void on_RectangleButton_clicked();
+    void on_CircleButton_clicked();
     void on_BrushSizeComboBox_currentIndexChanged(int index);
     void on_ColorSelectionButton_clicked();
     void on_clearButton_clicked();
@@ -50,6 +51,7 @@ private:
 
     QAction *openAct;
     QList<QAction *> saveAsActs;
+    QAction *exitAct;
     QAction *clearScreenAct;
     QAction *penColorAct;
     QAction *penWidthAct;

@@ -86,6 +86,11 @@ void MainWindow::createActions()
         saveAsActs.append(action);
     }
 
+    exitAct = new QAction(tr("&Exit"), this);
+    exitAct->setShortcuts(QKeySequence::Quit);
+    exitAct->setStatusTip(tr("Exit the application"));
+    connect(exitAct, &QAction::triggered, this, &QWidget::close);
+
     clearScreenAct = new QAction(tr("&Clear Screen"), this);
     clearScreenAct->setShortcut(tr("Ctrl+L"));
     connect(clearScreenAct, SIGNAL(triggered()),
@@ -101,6 +106,7 @@ void MainWindow::createMenus()
     fileMenu = new QMenu(tr("&File"), this);
     fileMenu->addAction(openAct);
     fileMenu->addMenu(saveAsMenu);
+    fileMenu->addAction(exitAct);
 
     optionMenu = new QMenu(tr("&Options"), this);
     optionMenu->addSeparator();
@@ -116,7 +122,7 @@ bool MainWindow::saveDialog()
     {
        QMessageBox::StandardButton selection;
 
-       QMessageBox::warning(this, tr("Scribble"), tr("Would you like to save your changes?"), QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
+       QMessageBox::warning(this, tr("DrawIt"), tr("Would you like to save your changes?"), QMessageBox::Save | QMessageBox::Discard | QMessageBox::Cancel);
        if (selection == QMessageBox::Save)
        {
            return saveFile("png");
@@ -163,6 +169,12 @@ void MainWindow::on_RectangleButton_clicked()
 {
     canvasArea->setDrawMode(CanvasArea::DrawMode::RECT);
 }
+
+void MainWindow::on_CircleButton_clicked()
+{
+    canvasArea->setDrawMode(CanvasArea::DrawMode::CIRCLE);
+}
+
 
 void MainWindow::on_BrushSizeComboBox_currentIndexChanged(int index)
 {

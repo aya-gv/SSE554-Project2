@@ -19,7 +19,8 @@ public:
         DRAWING = 1,
         ERASE = 2,
         LINE = 3,
-        RECT = 4
+        RECT = 4,
+        CIRCLE = 5
     };
 
     CanvasArea(QWidget *parent = 0);
@@ -48,6 +49,7 @@ private:
     void drawLineTo(const QPoint &endPoint);
     void drawLine(const QPoint &endPoint);
     void drawRect(const QPoint &endPoint);
+    void drawCircle(const QPoint &endPoint);
     void erase(const QPoint &endPoint);
     void resizeImage(QImage *image, const QSize &newSize);
 
