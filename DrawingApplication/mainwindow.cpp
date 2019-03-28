@@ -94,7 +94,7 @@ void MainWindow::createActions()
     clearScreenAct = new QAction(tr("&Clear Screen"), this);
     clearScreenAct->setShortcut(tr("Ctrl+L"));
     connect(clearScreenAct, SIGNAL(triggered()),
-            canvasArea, SLOT(clearImage()));
+            canvasArea, SLOT(clearScreen()));
 }
 
 void MainWindow::createMenus()
@@ -189,4 +189,14 @@ void MainWindow::on_ColorSelectionButton_clicked()
 void MainWindow::on_clearButton_clicked()
 {
     canvasArea->clearScreen();
+}
+
+void MainWindow::circleTest(QPoint topLeft, QPoint bottomRight)
+{
+    canvasArea->exampleCircle(topLeft, bottomRight);
+}
+
+void MainWindow::rectangleTest(QPoint topLeft, QPoint bottomRight)
+{
+    canvasArea->exampleRectangle(topLeft, bottomRight);
 }

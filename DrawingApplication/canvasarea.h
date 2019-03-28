@@ -35,6 +35,9 @@ public:
     QColor penColor() const { return myPenColor; }
     int penWidth() const { return myPenWidth; }
 
+    void exampleRectangle(QPoint topLeft, QPoint bottomRight);
+    void exampleCircle(QPoint topLeft, QPoint bottomRight);
+
 public slots:
     void clearScreen();
 

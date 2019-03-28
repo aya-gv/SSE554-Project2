@@ -71,10 +71,15 @@ void CanvasArea::mousePressEvent(QMouseEvent *event)
 
         if(drawMode == ERASE)
         {
-            QPixmap *map = new QPixmap(50,50);
-            map->fill(Qt::black);
-            QCursor cursor(*map);
-            QGuiApplication::setOverrideCursor(cursor);
+            QPixmap pixmap(QSize(20,20));
+            pixmap.fill(Qt::transparent);
+            QPainter painter(&pixmap);
+            QRect r(QPoint(), pixmap.size());
+            r.adjust(1,1,-1,-1);
+            painter.drawRect(r);
+            painter.end();
+            QCursor cursor(pixmap);
+            QApplication::setOverrideCursor(cursor);
         }
     }
 }
@@ -200,10 +205,10 @@ void CanvasArea::drawCircle(const QPoint &endPoint)
 void CanvasArea::erase(const QPoint &endPoint)
 {
     QPainter painter(&image);
-    painter.setPen(QPen(Qt::GlobalColor::white, 50, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+    painter.setPen(QPen(Qt::GlobalColor::white, 20, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
     painter.drawLine(lastPoint, endPoint);
     modified = true;
-    int rad = 50;
+    int rad = 10;
     update(QRect(lastPoint, endPoint).normalized().adjusted(-rad, -rad, +rad, +rad));
     lastPoint = endPoint;
 }
@@ -218,4 +223,18 @@ void CanvasArea::resizeImage(QImage *image, const QSize &newSize)
     QPainter painter(&newImage);
     painter.drawImage(QPoint(0, 0), *image);
     *image = newImage;
+}
+
+void CanvasArea::exampleRectangle(QPoint topLeft, QPoint bottomRight)
+{
+    previousImage = image;
+    lastPoint = topLeft;
+    drawRect(bottomRight);
+}
+
+void CanvasArea::exampleCircle(QPoint topLeft, QPoint bottomRight)
+{
+    previousImage = image;
+    lastPoint = topLeft;
+    drawCircle(bottomRight);
 }

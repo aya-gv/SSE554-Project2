@@ -17,6 +17,9 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+    void rectangleTest(QPoint topLeft, QPoint bottomRight);
+    void circleTest(QPoint topLeft, QPoint bottomRight);
+
 protected:
     void closeEvent(QCloseEvent *event) override;
 
