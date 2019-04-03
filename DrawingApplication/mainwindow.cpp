@@ -200,3 +200,13 @@ void MainWindow::rectangleTest(QPoint topLeft, QPoint bottomRight)
 {
     canvasArea->exampleRectangle(topLeft, bottomRight);
 }
+
+void MainWindow::lineTest(QPoint topLeft, QPoint bottomRight)
+{
+    canvasArea->exampleLine(topLeft, bottomRight);
+}
+
+void MainWindow::drawTest(QPoint topLeft, QPoint bottomRight)
+{
+    canvasArea->exampleLine(topLeft, bottomRight);
+}

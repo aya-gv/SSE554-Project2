@@ -238,3 +238,17 @@ void CanvasArea::exampleCircle(QPoint topLeft, QPoint bottomRight)
     lastPoint = topLeft;
     drawCircle(bottomRight);
 }
+
+void CanvasArea::exampleLine(QPoint topLeft, QPoint bottomRight)
+{
+    previousImage = image;
+    lastPoint = topLeft;
+    drawLine(bottomRight);
+}
+
+void CanvasArea::exampleDraw(QPoint topLeft, QPoint bottomRight)
+{
+    previousImage = image;
+    lastPoint = topLeft;
+    drawLineTo(bottomRight);
+}

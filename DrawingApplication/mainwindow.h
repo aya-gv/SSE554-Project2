@@ -19,6 +19,8 @@ public:
 
     void rectangleTest(QPoint topLeft, QPoint bottomRight);
     void circleTest(QPoint topLeft, QPoint bottomRight);
+    void lineTest(QPoint topLeft, QPoint bottomRight);
+    void drawTest(QPoint topLeft, QPoint bottomRight);
 
 protected:
     void closeEvent(QCloseEvent *event) override;

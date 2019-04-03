@@ -15,6 +15,9 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="0" rowspan="5">
+     <widget class="QTextBrowser" name="testResultLog"/>
+    </item>
     <item row="1" column="1">
      <widget class="QPushButton" name="rectangleTest">
       <property name="text">
@@ -22,7 +25,7 @@
       </property>
      </widget>
     </item>
-    <item row="3" column="1">
+    <item row="5" column="1">
      <spacer name="verticalSpacer">
       <property name="orientation">
        <enum>Qt::Vertical</enum>
@@ -35,13 +38,24 @@
       </property>
      </spacer>
     </item>
-    <item row="1" column="0" rowspan="3">
-     <widget class="QTextBrowser" name="testResultLog"/>
-    </item>
     <item row="2" column="1">
      <widget class="QPushButton" name="circleTest">
       <property name="text">
        <string>Circle</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QPushButton" name="lineTest">
+      <property name="text">
+       <string>Line</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QPushButton" name="drawTest">
+      <property name="text">
+       <string>Draw</string>
       </property>
      </widget>
     </item>
@@ -53,7 +67,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>

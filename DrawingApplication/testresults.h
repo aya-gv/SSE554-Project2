@@ -25,6 +25,10 @@ private slots:
 
     void on_circleTest_clicked();
 
+    void on_lineTest_clicked();
+
+    void on_drawTest_clicked();
+
 private:
     Ui::TestResults *ui;
     MainWindow mw;
