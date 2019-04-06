@@ -44,5 +44,7 @@ void TestResults::on_lineTest_clicked()
 
 void TestResults::on_drawTest_clicked()
 {
-    mw.drawTest(QPoint(20, 310), QPoint(120, 410));
+    mw.drawTest(QPoint(20, 310), QPoint(50, 312));
+    mw.drawTest(QPoint(70, 310), QPoint(50, 311));
+    mw.drawTest(QPoint(120, 310), QPoint(10, 313));
 }

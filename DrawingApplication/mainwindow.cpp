@@ -208,5 +208,5 @@ void MainWindow::lineTest(QPoint topLeft, QPoint bottomRight)
 
 void MainWindow::drawTest(QPoint topLeft, QPoint bottomRight)
 {
-    canvasArea->exampleLine(topLeft, bottomRight);
+    canvasArea->exampleDraw(topLeft, bottomRight);
 }
