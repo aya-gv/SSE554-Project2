@@ -21,6 +21,10 @@ public:
     void circleTest(QPoint topLeft, QPoint bottomRight);
     void lineTest(QPoint topLeft, QPoint bottomRight);
     void drawTest(QPoint topLeft, QPoint bottomRight);
+    void eraseTest(QPoint topLeft, QPoint bottomRight);
+    void clearTest();
+    void setBrushSizeTest();
+    void penColorTest();
 
 protected:
     void closeEvent(QCloseEvent *event) override;

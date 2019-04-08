@@ -39,6 +39,10 @@ public:
     void exampleCircle(QPoint topLeft, QPoint bottomRight);
     void exampleLine(QPoint topLeft, QPoint bottomRight);
     void exampleDraw(QPoint topLeft, QPoint bottomRight);
+    void exampleErase(QPoint topLeft, QPoint bottomRight);
+    void exampleClear();
+    void exampleBrushSize();
+    void examplePenColor();
 
 public slots:
     void clearScreen();

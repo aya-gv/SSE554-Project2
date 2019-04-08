@@ -210,3 +210,23 @@ void MainWindow::drawTest(QPoint topLeft, QPoint bottomRight)
 {
     canvasArea->exampleDraw(topLeft, bottomRight);
 }
+
+void MainWindow::eraseTest(QPoint topLeft, QPoint bottomRight)
+{
+    canvasArea->exampleErase(topLeft, bottomRight);
+}
+
+void MainWindow::clearTest()
+{
+    canvasArea->exampleClear();
+}
+
+void MainWindow::setBrushSizeTest()
+{
+    canvasArea->exampleBrushSize();
+}
+
+void MainWindow::penColorTest()
+{
+    canvasArea->examplePenColor();
+}

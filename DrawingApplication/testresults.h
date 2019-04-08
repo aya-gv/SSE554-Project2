@@ -29,6 +29,14 @@ private slots:
 
     void on_drawTest_clicked();
 
+    void on_eraseTest_clicked();
+
+    void on_clearTest_clicked();
+
+    void on_BrushSizeTest_clicked();
+
+    void on_penColorTest_clicked();
+
 private:
     Ui::TestResults *ui;
     MainWindow mw;

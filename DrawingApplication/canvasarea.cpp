@@ -252,3 +252,28 @@ void CanvasArea::exampleDraw(QPoint topLeft, QPoint bottomRight)
     lastPoint = topLeft;
     drawLineTo(bottomRight);
 }
+
+void CanvasArea::exampleErase(QPoint topLeft, QPoint bottomRight)
+{
+    previousImage = image;
+    lastPoint = topLeft;
+    erase(bottomRight);
+}
+
+void CanvasArea::exampleClear()
+{
+    previousImage = image;
+    clearScreen();
+}
+
+void CanvasArea::exampleBrushSize()
+{
+    previousImage = image;
+    setPenWidth(5);
+}
+
+void CanvasArea::examplePenColor()
+{
+    previousImage = image;
+    setPenColor(qRgb(5,200,5));
+}
