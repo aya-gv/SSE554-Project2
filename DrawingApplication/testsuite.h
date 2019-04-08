@@ -19,6 +19,13 @@ private:
 
     bool TestCase1();
     bool TestCase2();
+    bool TestCase3();
+    bool TestCase4();
+    bool TestCase5();
+    bool TestCase6();
+    bool TestCase7();
+    bool TestCase8();
+    bool TestCase9();
 
     QList<QString> output;
 };
